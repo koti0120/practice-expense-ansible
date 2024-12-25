@@ -4,15 +4,18 @@
   tasks:
   - name: disable nodejs
     ansible.builtin.command: dnf module disable nodejs -y
+
   - name: enable nodejs
     ansible.builtin.command: dnf module enable nodejs:20 -y
+
   - name: install nodejs20
     ansible.builtin.dnf:
       name: "{{ item }}"
       state: installed
-      loop:
-      - nodejs
-      - mysql
+    loop:
+    - nodejs
+    - mysql
+
   - name: expense useradd
     ansible.builtin.user:
       name: expense
