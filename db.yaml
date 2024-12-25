@@ -20,7 +20,7 @@
       login_password: ExpenseApp@1
       login_host: "{{ login_host }}" #db ip
       filter: version
-      ignore_errors: yes 
+    ignore_errors: yes 
     register: mysql_output
 
 
