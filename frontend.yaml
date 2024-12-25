@@ -11,7 +11,7 @@
       name: nginx
       state: started
       enabled: yes
-  # - name: remove default web file
-  #   ansible.builtin.file:
-  #     path: /usr/share/nginx/html
-  #     state: absent
+  - name: remove default web file
+    ansible.builtin.file:
+      path: /usr/share/nginx/html
+      state: absent
