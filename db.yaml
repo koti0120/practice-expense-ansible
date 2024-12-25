@@ -37,5 +37,6 @@
 
 
 
-  # - name: setup root password
-  #   ansible.builtin.command: "mysql_secure_installation --set-root-pass ExpenseApp@1"
+  - name: setup root password
+    ansible.builtin.command: "mysql_secure_installation --set-root-pass ExpenseApp@1"
+    when: mysql_output.failed is true #don't give {{}} in when condition
