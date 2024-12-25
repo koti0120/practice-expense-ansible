@@ -54,6 +54,15 @@
       target: /app/schema/backend.sql
       state: dump
       name: all
+
+  - name: daemon reload
+    ansible.builtin.systemd_service:
+      daemon_reload: true
+
+  - name: backend start and enabled
+    ansible.builtin.systemd_service:
+      state: restarted
+      enabled: true
       
       
         
