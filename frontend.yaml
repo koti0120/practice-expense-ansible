@@ -1,0 +1,6 @@
+- name: configuration of frontend file
+  hosts: frontend
+  become: true
+  hosts:
+  - name: install nginx
+    ansible.builtin.dnf:
