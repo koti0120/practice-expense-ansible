@@ -15,7 +15,11 @@
     ansible.builtin.file:
       path: /usr/share/nginx/html
       state: absent
-  - name: unarchive and download the fntend code
+  - name: create directory
+    ansible.builtin.file:
+      path: /usr/share/nginx/html
+      state: directory
+  - name: unarchive and download the frontend code
     ansible.builtin.unarchive:
       src: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
       dest: /usr/share/nginx/html
