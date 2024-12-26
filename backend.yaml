@@ -38,7 +38,7 @@
     ansible.builtin.copy:
       src: backend.service
       dest: /etc/systemd/system/backend.service
-      remote_src: yes
+      # remote_src: yes
   - name: install mysql dependencies
     ansible.builtin.pip:
       name:
