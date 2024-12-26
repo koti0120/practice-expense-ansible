@@ -11,3 +11,15 @@
       name: mysqld
       state: started
       enabled: yes
+  # check root password setup or not
+  - name: check DB connection
+    community.mysql.mysql_info:
+      login_user: root
+      login_password: ExpenseApp@1
+      login_host: db.kanakam.top
+      filter: version
+    ignore_errors: yes
+    register: mysql_root_output
+  - name: print the mysql_root_output
+    ansible.builtin.debug:
+      msg: "output is: {{mysql_root_output}}"
