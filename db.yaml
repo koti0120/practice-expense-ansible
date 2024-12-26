@@ -18,7 +18,7 @@
       - cryptography # this is used for sensitive info and passwords
       executable: pip3.9
   # check root password setup or not
-  - name: check DB connection
+  - name: check DB connection setup or not
     community.mysql.mysql_info:
       login_user: root
       login_password: ExpenseApp@1
